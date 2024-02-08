@@ -20,11 +20,11 @@ set -e
 DB_USER=`cat /etc/mysql/debian.cnf |grep user|head -1|awk  '{print $3}'`
 DB_PASSWORD=`cat /etc/mysql/debian.cnf |grep password|head -1|awk  '{print $3}'`
 HUSTOJ_ROOT='/home/judge'
-
+PHP_VER=`apt-cache search php-fpm|grep -e '[[:digit:]]\.[[:digit:]]' -o`
 case "$1" in
     configure)
     /etc/init.d/mysql restart
-    /etc/init.d/php7.2-fpm restart
+    /etc/init.d/php$PHP_VER-fpm restart
     mysql -h localhost -u$DB_USER -p$DB_PASSWORD < $HUSTOJ_ROOT/sql/db.sql
     ln -s /home/judge/etc/nginx.conf /etc/nginx/conf.d/hustoj.conf
     sed -i "s/OJ_USER_NAME=root/OJ_USER_NAME=$DB_USER/g" $HUSTOJ_ROOT/etc/judge.conf
