@@ -8,9 +8,6 @@ jobs:
     strategy:
       fail-fast: false
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: docker/setup.sh
     steps:
       - uses: actions/checkout@v4
         with:
