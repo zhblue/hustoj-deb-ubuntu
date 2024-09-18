@@ -15,3 +15,4 @@ set -ex \
 && cd $BUILDDIR && dpkg-buildpackage \
 && mv /root/hustoj_${VERSION}_amd64.deb /tmp/deb/hustoj_${DISTRIBUTION}_${VERSION}-${TRAVIS_TAG}_amd64.deb
 
+
