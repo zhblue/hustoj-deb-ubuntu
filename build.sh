@@ -9,6 +9,6 @@ set -ex \
 && cd .. \
 && git clone https://github.com/zhblue/hustoj-deb-ubuntu.git \
 && mv hustoj/trunk/* hustoj-deb-ubuntu \
-&& cd $BUILDDIR && dpkg-buildpackage 
+&& cd hustoj-deb-ubuntu && dpkg-buildpackage 
 
 
