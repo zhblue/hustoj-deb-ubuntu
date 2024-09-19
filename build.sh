@@ -1,8 +1,8 @@
 #!/bin/sh
 
 sudo apt autoremove -y --purge needrestart
-sudo apt-get update && apt-get -y upgrade
-
+sudo apt-get update 
+sudo apt-get -y upgrade
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository -y universe
 sudo add-apt-repository -y multiverse
