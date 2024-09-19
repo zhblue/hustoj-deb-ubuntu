@@ -1,7 +1,5 @@
 #!/bin/sh
 
-VERSION=0.0.1
-BUILDDIR="/root/hustoj-${VERSION}"
 sudo apt-get install debhelper
 set -ex \
 && git clone https://github.com/zhblue/hustoj.git \
