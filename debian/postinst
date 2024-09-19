@@ -16,9 +16,8 @@ set -e
 #          <conflicting-package> <version>
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
-
-DB_USER=`cat /etc/mysql/debian.cnf |grep user|head -1|awk  '{print $3}'`
-DB_PASSWORD=`cat /etc/mysql/debian.cnf |grep password|head -1|awk  '{print $3}'`
+DB_USER="hustoj"
+DB_PASSWORD=`tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1`
 HUSTOJ_ROOT='/home/judge'
 PHP_VER=`apt-cache search php-fpm|grep -e '[[:digit:]]\.[[:digit:]]' -o`
 case "$1" in
@@ -26,6 +25,7 @@ case "$1" in
     /etc/init.d/mysql restart
     /etc/init.d/php$PHP_VER-fpm restart
     mysql < $HUSTOJ_ROOT/sql/db.sql
+    echo "CREATE USER '$DB_USER'@'localhost' identified by '$DB_PASSWORD';grant all privileges on jol.* to '$DB_USER'@'localhost' ; flush privileges;"|mysql
     #ln -s /home/judge/etc/nginx.conf /etc/nginx/conf.d/hustoj.conf
     sed -i "s/OJ_USER_NAME=root/OJ_USER_NAME=$DB_USER/g" $HUSTOJ_ROOT/etc/judge.conf
     sed -i "s/OJ_PASSWORD=root/OJ_PASSWORD=$DB_PASSWORD/g" $HUSTOJ_ROOT/etc/judge.conf
