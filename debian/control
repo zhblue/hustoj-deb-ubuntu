@@ -10,7 +10,7 @@ Homepage: <https://github.com/zhblue/hustoj>
 
 Package: hustoj
 Architecture: any
-Depends: nginx, wget, php-common, php-intl, php-xmlrpc, php-apcu, tzdata, php-yaml, php-mbstring, php-mysql, php-gd, php-fpm, php-xml, php-zip, mysql-server, gcc, libmariadb-dev, libmariadbclient-dev
+Depends: nginx, wget, php-common, php-intl, php-xmlrpc, php-apcu, tzdata, php-yaml, php-mbstring, php-mysql, php-gd, php-fpm, php-xml, php-zip, mysql-server, gcc
 Description: <Open Source Online Judge System founded in HUST>
  <open source, compatible with freeproblemset>
 
