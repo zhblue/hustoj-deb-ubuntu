@@ -25,7 +25,7 @@ case "$1" in
     configure)
     /etc/init.d/mysql restart
     /etc/init.d/php$PHP_VER-fpm restart
-    mysql -h localhost -u$DB_USER -p$DB_PASSWORD < $HUSTOJ_ROOT/sql/db.sql
+    mysql < $HUSTOJ_ROOT/sql/db.sql
     #ln -s /home/judge/etc/nginx.conf /etc/nginx/conf.d/hustoj.conf
     sed -i "s/OJ_USER_NAME=root/OJ_USER_NAME=$DB_USER/g" $HUSTOJ_ROOT/etc/judge.conf
     sed -i "s/OJ_PASSWORD=root/OJ_PASSWORD=$DB_PASSWORD/g" $HUSTOJ_ROOT/etc/judge.conf
