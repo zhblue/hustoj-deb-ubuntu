@@ -12,7 +12,7 @@ wget http://dl.hustoj.com/hustoj.tar.gz
 tar xzf hustoj.tar.gz
 set -ex \
 && git clone https://github.com/zhblue/hustoj-deb-ubuntu.git \
-&& mv hustoj/trunk/* hustoj-deb-ubuntu \
+&& mv src/* hustoj-deb-ubuntu \
 && cd hustoj-deb-ubuntu && dpkg-buildpackage 
 cd ..
 PHP_VER=`apt-cache search php-fpm|grep -e '[[:digit:]]\.[[:digit:]]' -o`
