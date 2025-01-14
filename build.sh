@@ -8,8 +8,9 @@ sudo add-apt-repository -y universe
 sudo add-apt-repository -y multiverse
 sudo add-apt-repository -y restricted
 sudo apt-get install debhelper
+wget http://dl.hustoj.com/hustoj.tar.gz
+tar xzf hustoj.tar.gz
 set -ex \
-&& git clone https://github.com/zhblue/hustoj.git \
 && git clone https://github.com/zhblue/hustoj-deb-ubuntu.git \
 && mv hustoj/trunk/* hustoj-deb-ubuntu \
 && cd hustoj-deb-ubuntu && dpkg-buildpackage 
