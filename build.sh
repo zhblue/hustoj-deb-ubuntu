@@ -7,7 +7,7 @@ sudo apt-get install -y software-properties-common
 sudo add-apt-repository -y universe
 sudo add-apt-repository -y multiverse
 sudo add-apt-repository -y restricted
-sudo apt-get install debhelper
+sudo apt-get install debhelper build-essential:native
 wget http://dl.hustoj.com/hustoj.tar.gz
 tar xzf hustoj.tar.gz
 set -ex \
