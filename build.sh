@@ -26,5 +26,6 @@ do
                 echo "Network fail, retry... you might want to change another apt source for install"
         done
 done
+python3 src/install/deb_analyzer.py
 sudo dpkg -i *.deb || sudo apt-get install -f -y
 exit 0
