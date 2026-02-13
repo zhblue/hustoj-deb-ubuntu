@@ -17,7 +17,6 @@ Depends: ${shlibs:Depends},
          php-fpm, php-mysql, php-gd, php-zip, php-mbstring, php-xml, php-curl, php-intl, php-soap,
          php-memcached | php-memcache, php-apcu, php-yaml,
          memcached,
-         fail2ban,
          gcc, g++, make, flex,
          net-tools, bzip2, tzdata
 Description: Open Source Online Judge System founded in HUST
