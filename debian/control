@@ -2,15 +2,26 @@ Source: hustoj
 Section: education
 Priority: optional
 Maintainer: zhblue <zhblue@hustoj.com>
-Build-Depends: debhelper (>= 9)
+Build-Depends: debhelper (>= 9), 
+               g++, 
+               libmysqlclient-dev, 
+               libmysql++-dev
 Standards-Version: 3.9.5
-Homepage: <https://github.com/zhblue/hustoj>
-#Vcs-Git: https://github.com/zhblue/hustoj.git
-#Vcs-Browser: https://github.com/zhblue/hustoj.git
+Homepage: https://github.com/zhblue/hustoj
 
 Package: hustoj
 Architecture: any
-Depends: nginx,gcc
-Description: <Open Source Online Judge System founded in HUST>
- <open source, compatible with freeproblemset>
-
+Depends: ${shlibs:Depends}, 
+         ${misc:Depends},
+         nginx,
+         mariadb-server | mysql-server,
+         php-fpm, php-mysql, php-gd, php-zip, php-mbstring, php-xml, php-curl, php-intl, php-soap,
+         php-memcached | php-memcache, php-apcu, php-yaml,
+         memcached,
+         fail2ban,
+         gcc, g++, make, flex,
+         net-tools, bzip2, tzdata
+Description: Open Source Online Judge System founded in HUST
+ HUSTOJ is an open source online judge system, compatible with 
+ freeproblemset. It features a robust judge core written in C++ 
+ and a flexible web interface in PHP.
