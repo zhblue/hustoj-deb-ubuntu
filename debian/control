@@ -4,8 +4,7 @@ Priority: optional
 Maintainer: zhblue <zhblue@hustoj.com>
 Build-Depends: debhelper (>= 9), 
                g++, 
-               libmysqlclient-dev, 
-               libmysql++-dev
+               libmysqlclient-dev
 Standards-Version: 3.9.5
 Homepage: https://github.com/zhblue/hustoj
 
